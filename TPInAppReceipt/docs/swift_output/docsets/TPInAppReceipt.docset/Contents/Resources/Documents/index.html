@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>TPInAppReceipt  Reference</title>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
+    
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a title="TPInAppReceipt  Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="index.html">TPInAppReceipt 3.2.0 Docs</a> (53% documented)</p>
+        <p class="header-right"><a href="https://github.com/tikhop/TPInAppReceipt"><img src="img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="index.html">TPInAppReceipt Reference</a>
+        <img id="carat" src="img/carat.png" />
+        TPInAppReceipt  Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Classes/InAppReceipt.html">InAppReceipt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Classes.html#/s:14TPInAppReceipt19SKSubscriptionGroupC">SKSubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Enums/IARError.html">IARError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/IARError/ReceiptInitializationFailureReason.html">– ReceiptInitializationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/IARError/ValidationFailureReason.html">– ValidationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/IARError/SignatureValidationFailureReason.html">– SignatureValidationFailureReason</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/SKProductsResponse.html">SKProductsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Structs/InAppPurchase.html">InAppPurchase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/InAppPurchase/Type.html">– Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs.html#/s:14TPInAppReceipt02InbC5FieldV">InAppReceiptField</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14TPInAppReceipt15GroupIdentifiera">GroupIdentifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14TPInAppReceipt23IAPRefreshRequestResulta">IAPRefreshRequestResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Typealiases.html#/s:14TPInAppReceipt17SubscriptionGroupa">SubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            
+            <p align="center">
+  <img height="160" src="https://github.com/tikhop/TPInAppReceipt/blob/master/www/logo.png" />
+</p>
+<h1 id='tpinappreceipt' class='heading'>TPInAppReceipt</h1>
+
+<p><img src="https://github.com/tikhop/TPInAppReceipt/workflows/Swift/badge.svg?branch=master" alt="Swift">
+<a href="https://cocoapods.org/pods/TPInAppReceipt"><img src="https://img.shields.io/cocoapods/v/TPInAppReceipt.svg" alt="CocoaPods Compatible"></a>
+<a href="https://github.com/apple/swift-package-manager"><img src="https://img.shields.io/badge/Swift%20Package%20Manager-compatible-brightgreen.svg" alt="Swift Package Manager compatible"></a>
+<a href=""><img src="https://img.shields.io/cocoapods/p/TPInAppReceipt.svg?style=flat" alt="Platform"></a>
+<a href="https://raw.githubusercontent.com/tikhop/TPInAppReceipt/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="GitHub license"></a></p>
+
+<p>A lightweight library for reading and validating Apple In App Purchase Receipt locally.</p>
+<h2 id='features' class='heading'>Features</h2>
+
+<ul>
+<li>[x] Read all In-App Receipt Attributes</li>
+<li>[x] Validate In-App Purchase Receipt (Signature, Bundle Version and Identifier, Hash)</li>
+<li>[x] Use with StoreKitTest</li>
+<li>[x] Use in Objective-C projects</li>
+</ul>
+<h2 id='installation' class='heading'>Installation</h2>
+
+<blockquote>
+<p>Note: <a href="https://github.com/tikhop/TPInAppReceipt/blob/master/Documentation/UseInObjCProject.md">TPInAppReceipt in Objective-C project</a> - If you want to use TPInAppReceipt in Objective-C project please follow this guide. </p>
+</blockquote>
+<h3 id='cocoapods' class='heading'>CocoaPods</h3>
+
+<p>To integrate TPInAppReceipt into your project using CocoaPods, specify it in your <code>Podfile</code>:</p>
+<pre class="highlight ruby"><code><span class="n">platform</span> <span class="ss">:ios</span><span class="p">,</span> <span class="s1">'9.0'</span>
+
+<span class="n">target</span> <span class="s1">'YOUR_TARGET'</span> <span class="k">do</span>
+    <span class="n">use_frameworks!</span>
+
+    <span class="n">pod</span> <span class="s1">'TPInAppReceipt'</span>
+<span class="k">end</span>
+
+</code></pre>
+
+<p>Then, run the following command:</p>
+<pre class="highlight shell"><code><span class="gp">$ </span>pod install
+</code></pre>
+
+<p>In any swift file you&rsquo;d like to use TPInAppReceipt, import the framework with <code>import TPInAppReceipt</code>.</p>
+<h3 id='swift-package-manager' class='heading'>Swift Package Manager</h3>
+
+<p>To integrate using Apple&rsquo;s Swift package manager, add the following as a dependency to your <code>Package.swift</code>:</p>
+<pre class="highlight swift"><code><span class="o">.</span><span class="nf">package</span><span class="p">(</span><span class="nv">url</span><span class="p">:</span> <span class="s">"https://github.com/tikhop/TPInAppReceipt.git"</span><span class="p">,</span> <span class="o">.</span><span class="nf">upToNextMajor</span><span class="p">(</span><span class="nv">from</span><span class="p">:</span> <span class="s">"3.0.0"</span><span class="p">))</span>
+</code></pre>
+
+<p>Then, specify <code>&quot;TPInAppReceipt&quot;</code> as a dependency of the Target in which you wish to use TPInAppReceipt.</p>
+
+<p>Lastly, run the following command:</p>
+<pre class="highlight swift"><code><span class="n">swift</span> <span class="n">package</span> <span class="n">update</span>
+</code></pre>
+<h3 id='requirements' class='heading'>Requirements</h3>
+
+<ul>
+<li>iOS 10.0+ / OSX 10.11+</li>
+<li>Swift 5.3+</li>
+</ul>
+<h2 id='usage' class='heading'>Usage</h2>
+<h3 id='working-with-a-receipt' class='heading'>Working With a Receipt</h3>
+
+<p><code><a href="Classes/InAppReceipt.html">InAppReceipt</a></code> is an object to incapsulate all necessary getters from a receipt payload and provides a comprehensive API for reading and validating in app receipt and related purchases.</p>
+<h4 id='initializing-receipt' class='heading'>Initializing Receipt</h4>
+<pre class="highlight swift"><code><span class="k">do</span> <span class="p">{</span>
+  <span class="c1">/// Initialize receipt</span>
+  <span class="k">let</span> <span class="nv">receipt</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">InAppReceipt</span><span class="o">.</span><span class="nf">localReceipt</span><span class="p">()</span> 
+  <span class="c1">// let receipt = try InAppReceipt() // Returns local receipt </span>
+
+  <span class="c1">// let receiptData: Data = ...</span>
+  <span class="c1">// let receipt = try InAppReceipt.receipt(from: receiptData)</span>
+
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+  <span class="nf">print</span><span class="p">(</span><span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+</code></pre>
+<h4 id='refreshing-requesting-receipt' class='heading'>Refreshing/Requesting Receipt</h4>
+
+<p>Use this method to request a new receipt if the receipt is invalid or missing. </p>
+<pre class="highlight swift"><code><span class="kt">InAppReceipt</span><span class="o">.</span><span class="n">refresh</span> <span class="p">{</span> <span class="p">(</span><span class="n">error</span><span class="p">)</span> <span class="k">in</span>
+  <span class="k">if</span> <span class="k">let</span> <span class="nv">err</span> <span class="o">=</span> <span class="n">error</span>
+  <span class="p">{</span>
+    <span class="nf">print</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+  <span class="p">}</span><span class="k">else</span><span class="p">{</span>
+    <span class="nf">initializeReceipt</span><span class="p">()</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre>
+<h4 id='reading-receipt' class='heading'>Reading Receipt</h4>
+<pre class="highlight swift"><code><span class="c1">/// Base64 Encoded Receipt</span>
+<span class="k">let</span> <span class="nv">base64Receipt</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="n">base64</span>
+
+<span class="c1">/// Initialize receipt</span>
+<span class="k">let</span> <span class="nv">receipt</span> <span class="o">=</span> <span class="k">try!</span> <span class="kt">InAppReceipt</span><span class="o">.</span><span class="nf">localReceipt</span><span class="p">()</span> 
+
+<span class="c1">/// Check whether receipt contains any purchases</span>
+<span class="k">let</span> <span class="nv">hasPurchases</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="n">hasPurchases</span>
+
+<span class="c1">/// All auto renewable `InAppPurchase`s,</span>
+<span class="k">let</span> <span class="nv">purchases</span><span class="p">:</span> <span class="p">[</span><span class="kt">InAppPurchase</span><span class="p">]</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="n">autoRenewablePurchases</span> 
+
+<span class="c1">/// all ACTIVE auto renewable `InAppPurchase`s,</span>
+<span class="k">let</span> <span class="nv">activePurchases</span><span class="p">:</span> <span class="p">[</span><span class="kt">InAppPurchase</span><span class="p">]</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="n">activeAutoRenewableSubscriptionPurchases</span> 
+
+</code></pre>
+<h4 id='validating-receipt' class='heading'>Validating Receipt</h4>
+<pre class="highlight swift"><code>
+<span class="c1">/// Verify all at once</span>
+
+<span class="k">do</span> <span class="p">{</span>
+<span class="k">try</span> <span class="n">r</span><span class="o">.</span><span class="nf">verify</span><span class="p">()</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="kt">IARError</span><span class="o">.</span><span class="nf">validationFailed</span><span class="p">(</span><span class="nv">reason</span><span class="p">:</span> <span class="o">.</span><span class="n">hashValidation</span><span class="p">)</span> 
+<span class="p">{</span>
+<span class="c1">// Do smth</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="kt">IARError</span><span class="o">.</span><span class="nf">validationFailed</span><span class="p">(</span><span class="nv">reason</span><span class="p">:</span> <span class="o">.</span><span class="n">bundleIdentifierVerification</span><span class="p">)</span> 
+<span class="p">{</span>
+<span class="c1">// Do smth</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="kt">IARError</span><span class="o">.</span><span class="nf">validationFailed</span><span class="p">(</span><span class="nv">reason</span><span class="p">:</span> <span class="o">.</span><span class="n">signatureValidation</span><span class="p">)</span> 
+<span class="p">{</span>
+<span class="c1">// Do smth</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">{</span>
+<span class="c1">// Do smth</span>
+<span class="p">}</span>
+
+<span class="c1">/// Verify hash </span>
+<span class="k">try</span><span class="p">?</span> <span class="n">r</span><span class="o">.</span><span class="nf">verifyHash</span><span class="p">()</span>
+
+<span class="c1">/// Verify bundle identifier and version</span>
+<span class="k">try</span><span class="p">?</span> <span class="n">r</span><span class="o">.</span><span class="nf">verifyBundleIdentifierAndVersion</span><span class="p">()</span>
+
+<span class="c1">/// Verify signature</span>
+<span class="k">try</span><span class="p">?</span> <span class="n">r</span><span class="o">.</span><span class="nf">verifySignature</span><span class="p">()</span>
+
+</code></pre>
+<h4 id='determining-eligibility-for-introductory-offer' class='heading'>Determining Eligibility for Introductory Offer</h4>
+<pre class="highlight swift"><code>
+<span class="c1">// Initialize receipt</span>
+<span class="k">let</span> <span class="nv">receipt</span> <span class="o">=</span> <span class="k">try</span> <span class="kt">InAppReceipt</span><span class="p">()</span>
+
+<span class="c1">// Check whether user is eligible for any products within the same subscription group </span>
+<span class="k">var</span> <span class="nv">isEligible</span> <span class="o">=</span> <span class="n">receipt</span><span class="o">.</span><span class="nf">isEligibleForIntroductoryOffer</span><span class="p">(</span><span class="nv">for</span><span class="p">:</span> <span class="p">[</span><span class="s">"com.test.product.bronze"</span><span class="p">,</span> <span class="s">"com.test.product.silver"</span><span class="p">,</span> <span class="s">"com.test.product.gold"</span><span class="p">])</span>
+
+
+</code></pre>
+<h4 id='useful-methods' class='heading'>Useful methods</h4>
+<pre class="highlight swift"><code>
+<span class="c1">// Retrieve Original TransactionIdentifier for Product Name</span>
+<span class="n">receipt</span><span class="o">.</span><span class="nf">originalTransactionIdentifier</span><span class="p">(</span><span class="nv">ofProductIdentifier</span><span class="p">:</span> <span class="n">subscriptionName</span><span class="p">)</span>
+
+<span class="c1">// Retrieve Active Auto Renewable Subscription's Purchases for Product Name and Specific Date</span>
+<span class="n">receipt</span><span class="o">.</span><span class="nf">activeAutoRenewableSubscriptionPurchases</span><span class="p">(</span><span class="nv">ofProductIdentifier</span><span class="p">:</span> <span class="n">subscriptionName</span><span class="p">,</span> <span class="nv">forDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">())</span>
+
+<span class="c1">// Retrieve All Purchases for Product Name</span>
+<span class="n">receipt</span><span class="o">.</span><span class="nf">purchases</span><span class="p">(</span><span class="nv">ofProductIdentifier</span><span class="p">:</span> <span class="n">subscriptionName</span><span class="p">)</span>
+
+</code></pre>
+<h2 id='essential-reading' class='heading'>Essential Reading</h2>
+
+<ul>
+<li><a href="https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Introduction.html">Apple - About Receipt Validation</a></li>
+<li><a href="https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ReceiptFields.html#//apple_ref/doc/uid/TP40010573-CH106-SW1">Apple - Receipt Validation Programming Guide</a></li>
+<li><a href="https://developer.apple.com/library/content/releasenotes/General/ValidateAppStoreReceipt/Chapters/ValidateLocally.html">Apple - Validating Receipts Locally</a></li>
+<li><a href="https://fluffy.es/in-app-purchase-receipt-local/">fluffy.es - Tutorial: Read and validate in-app purchase receipt locally using TPInAppReceipt</a></li>
+<li><a href="https://www.objc.io/issues/17-security/receipt-validation/">objc.io - Receipt Validation</a></li>
+</ul>
+<h2 id='license' class='heading'>License</h2>
+
+<p>TPInAppReceipt is released under an MIT license. See <a href="https://github.com/tikhop/TPInAppReceipt/blob/master/LICENSE">LICENSE</a> for more information.</p>
+
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/tikhop/TPInAppReceipt" target="_blank" rel="external">Pavel Tikhonenko</a>. All rights reserved. (Last updated: 2021-05-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

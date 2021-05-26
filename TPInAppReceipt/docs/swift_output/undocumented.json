@@ -1,0 +1,369 @@
+{
+  "warnings": [
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Data+Extension.swift",
+      "line": 13,
+      "symbol": "Data.bytes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Date+Extension.swift",
+      "line": 13,
+      "symbol": "Date.rfc3339date(fromString:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Date+Extension.swift",
+      "line": 21,
+      "symbol": "String.rfc3339date()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Extras.swift",
+      "line": 20,
+      "symbol": "SKSubscriptionGroup",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Extras.swift",
+      "line": 58,
+      "symbol": "GroupIdentifier",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Extras.swift",
+      "line": 169,
+      "symbol": "IAPRefreshRequestResult",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Extras.swift",
+      "line": 216,
+      "symbol": "SubscriptionGroup",
+      "symbol_kind": "source.lang.swift.decl.typealias",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 18,
+      "symbol": "IARError.initializationFailed(reason:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 19,
+      "symbol": "IARError.validationFailed(reason:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 20,
+      "symbol": "IARError.purchaseExpired",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 28,
+      "symbol": "IARError.ReceiptInitializationFailureReason.appStoreReceiptNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 29,
+      "symbol": "IARError.ReceiptInitializationFailureReason.pkcs7ParsingError",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 30,
+      "symbol": "IARError.ReceiptInitializationFailureReason.dataIsInvalid",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 39,
+      "symbol": "IARError.ValidationFailureReason.hashValidation",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 40,
+      "symbol": "IARError.ValidationFailureReason.signatureValidation(_:)",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 41,
+      "symbol": "IARError.ValidationFailureReason.bundleIdentifierVerification",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 42,
+      "symbol": "IARError.ValidationFailureReason.bundleVersionVerification",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 54,
+      "symbol": "IARError.SignatureValidationFailureReason.appleIncRootCertificateNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 55,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadAppleIncRootCertificate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 56,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadAppleIncPublicKey",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 57,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadiTunesCertificate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 58,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadiTunesPublicKey",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 59,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadWorldwideDeveloperCertificate",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 60,
+      "symbol": "IARError.SignatureValidationFailureReason.unableToLoadAppleIncPublicSecKey",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 61,
+      "symbol": "IARError.SignatureValidationFailureReason.receiptIsNotSigned",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 62,
+      "symbol": "IARError.SignatureValidationFailureReason.receiptSignedDataNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 63,
+      "symbol": "IARError.SignatureValidationFailureReason.receiptDataNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 64,
+      "symbol": "IARError.SignatureValidationFailureReason.signatureNotFound",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 65,
+      "symbol": "IARError.SignatureValidationFailureReason.invalidSignature",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/IARError.swift",
+      "line": 66,
+      "symbol": "IARError.SignatureValidationFailureReason.invalidCertificateChainOfTrust",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppPurchase.swift",
+      "line": 11,
+      "symbol": "InAppPurchase",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppPurchase.swift",
+      "line": 13,
+      "symbol": "InAppPurchase.Type",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppPurchase.swift",
+      "line": 73,
+      "symbol": "InAppPurchase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppPurchase.swift",
+      "line": 176,
+      "symbol": "InAppPurchase",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt+ASN1Decodable.swift",
+      "line": 244,
+      "symbol": "InAppPurchase.template",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 12,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 12,
+      "symbol": "InAppReceiptField",
+      "symbol_kind": "source.lang.swift.decl.struct",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 22,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 42,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 85,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 132,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 144,
+      "symbol": "InAppReceipt.creationDate",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 149,
+      "symbol": "InAppReceipt.ageRating",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 218,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 285,
+      "symbol": "InAppReceipt",
+      "symbol_kind": "source.lang.swift.decl.extension",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 293,
+      "symbol": "InAppReceipt.worldwideDeveloperCertificateData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 298,
+      "symbol": "InAppReceipt.iTunesCertificateData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 303,
+      "symbol": "InAppReceipt.iTunesPublicKeyData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/InAppReceipt.swift",
+      "line": 308,
+      "symbol": "InAppReceipt.payloadRawData",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Initialization.swift",
+      "line": 66,
+      "symbol": "Bundle.lookUp(forResource:ofType:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.class",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Validation.swift",
+      "line": 114,
+      "symbol": "InAppReceipt.checkChainOfTrust()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/tikhop/Work/TPInAppReceipt/Sources/Validation.swift",
+      "line": 199,
+      "symbol": "InAppReceipt.checkSignatureValidity()",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    }
+  ],
+  "source_directory": "/Users/tikhop/Work/TPInAppReceipt"
+}

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>InAppPurchase Structure Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Struct/InAppPurchase" class="dashAnchor"></a>
+    <a title="InAppPurchase Structure Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">TPInAppReceipt 3.2.0 Docs</a> (53% documented)</p>
+        <p class="header-right"><a href="https://github.com/tikhop/TPInAppReceipt"><img src="../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">TPInAppReceipt Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        InAppPurchase Structure Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/InAppReceipt.html">InAppReceipt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes.html#/s:14TPInAppReceipt19SKSubscriptionGroupC">SKSubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/IARError.html">IARError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/IARError/ReceiptInitializationFailureReason.html">– ReceiptInitializationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/IARError/ValidationFailureReason.html">– ValidationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/IARError/SignatureValidationFailureReason.html">– SignatureValidationFailureReason</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/SKProductsResponse.html">SKProductsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/InAppPurchase.html">InAppPurchase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/InAppPurchase/Type.html">– Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:14TPInAppReceipt02InbC5FieldV">InAppReceiptField</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14TPInAppReceipt15GroupIdentifiera">GroupIdentifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14TPInAppReceipt23IAPRefreshRequestResulta">IAPRefreshRequestResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Typealiases.html#/s:14TPInAppReceipt17SubscriptionGroupa">SubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>InAppPurchase</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">InAppPurchase</span></code></pre>
+<pre class="highlight swift"><code><span class="kd">extension</span> <span class="kt">InAppPurchase</span><span class="p">:</span> <span class="kt">ASN1Decodable</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L11-L71">Show on GitHub</a>
+              </div>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV4TypeO"></a>
+                    <a name="//apple_ref/swift/Enum/Type" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV4TypeO">Type</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Structs/InAppPurchase/Type.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt"><a href="../Structs/InAppPurchase.html">InAppPurchase</a></span><span class="o">.</span><span class="err">`</span><span class="k">Type</span><span class="err">`</span> <span class="p">:</span> <span class="kt">Int32</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L13-L29">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV17productIdentifierSSvp"></a>
+                    <a name="//apple_ref/swift/Property/productIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV17productIdentifierSSvp">productIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The product identifier which purchase related to</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">productIdentifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L32">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV11productTypeAC0G0Ovp"></a>
+                    <a name="//apple_ref/swift/Property/productType" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV11productTypeAC0G0Ovp">productType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Product type</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">productType</span><span class="p">:</span> <span class="k">Type</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L35">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV21transactionIdentifierSSvp"></a>
+                    <a name="//apple_ref/swift/Property/transactionIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV21transactionIdentifierSSvp">transactionIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Transaction identifier</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">transactionIdentifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L38">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV29originalTransactionIdentifierSSvp"></a>
+                    <a name="//apple_ref/swift/Property/originalTransactionIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV29originalTransactionIdentifierSSvp">originalTransactionIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Original Transaction identifier</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">originalTransactionIdentifier</span><span class="p">:</span> <span class="kt">String</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L41">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV12purchaseDate10Foundation0G0Vvp"></a>
+                    <a name="//apple_ref/swift/Property/purchaseDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV12purchaseDate10Foundation0G0Vvp">purchaseDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Purchase Date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">purchaseDate</span><span class="p">:</span> <span class="kt">Date</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L44">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV08originalE4Date10Foundation0G0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/originalPurchaseDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV08originalE4Date10Foundation0G0VSgvp">originalPurchaseDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Original Purchase Date. Returns <code>nil</code> when testing with StoreKitTest</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">originalPurchaseDate</span><span class="p">:</span> <span class="kt">Date</span><span class="o">!</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L47">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV26subscriptionExpirationDate10Foundation0H0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/subscriptionExpirationDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV26subscriptionExpirationDate10Foundation0H0VSgvp">subscriptionExpirationDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Subscription Expiration Date. Returns <code>nil</code> if the purchase has been expired (in some cases)</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">subscriptionExpirationDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L50">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV16cancellationDate10Foundation0G0VSgvp"></a>
+                    <a name="//apple_ref/swift/Property/cancellationDate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV16cancellationDate10Foundation0G0VSgvp">cancellationDate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Cancellation Date. Returns <code>nil</code> if the purchase is not a renewable subscription</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">cancellationDate</span><span class="p">:</span> <span class="kt">Date</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L53">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV23subscriptionTrialPeriodSbvp"></a>
+                    <a name="//apple_ref/swift/Property/subscriptionTrialPeriod" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV23subscriptionTrialPeriodSbvp">subscriptionTrialPeriod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This value is <code>true</code>if the customer’s subscription is currently in the free trial period, or <code>false</code> if not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">subscriptionTrialPeriod</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L56">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV35subscriptionIntroductoryPricePeriodSbvp"></a>
+                    <a name="//apple_ref/swift/Property/subscriptionIntroductoryPricePeriod" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV35subscriptionIntroductoryPricePeriodSbvp">subscriptionIntroductoryPricePeriod</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This value is <code>true</code> if the customer’s subscription is currently in an introductory price period, or <code>false</code> if not.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">subscriptionIntroductoryPricePeriod</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L59">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV18webOrderLineItemIDSiSgvp"></a>
+                    <a name="//apple_ref/swift/Property/webOrderLineItemID" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV18webOrderLineItemIDSiSgvp">webOrderLineItemID</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A unique identifier for purchase events across devices, including subscription-renewal events. This value is the primary key for identifying subscription purchases.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">webOrderLineItemID</span><span class="p">:</span> <span class="kt">Int</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L62">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV26promotionalOfferIdentifierSSSgvp"></a>
+                    <a name="//apple_ref/swift/Property/promotionalOfferIdentifier" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV26promotionalOfferIdentifierSSSgvp">promotionalOfferIdentifier</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The value is an identifier of the subscription offer that the user redeemed.
+Returns <code>nil</code> if  the user didn&rsquo;t use any subscription offers.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">promotionalOfferIdentifier</span><span class="p">:</span> <span class="kt">String</span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L66">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV8quantitySivp"></a>
+                    <a name="//apple_ref/swift/Property/quantity" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV8quantitySivp">quantity</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The number of consumable products purchased
+The default value is <code>1</code> unless modified with a mutable payment. The maximum value is 10.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">quantity</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L70">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV23isRenewableSubscriptionSbvp"></a>
+                    <a name="//apple_ref/swift/Property/isRenewableSubscription" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV23isRenewableSubscriptionSbvp">isRenewableSubscription</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>A Boolean value indicating whether the purchase is renewable subscription.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">isRenewableSubscription</span><span class="p">:</span> <span class="kt">Bool</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L76-L79">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV33isActiveAutoRenewableSubscription7forDateSb10Foundation0L0V_tF"></a>
+                    <a name="//apple_ref/swift/Method/isActiveAutoRenewableSubscription(forDate:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV33isActiveAutoRenewableSubscription7forDateSb10Foundation0L0V_tF">isActiveAutoRenewableSubscription(forDate:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Check whether the subscription is active for a specific date</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">func</span> <span class="nf">isActiveAutoRenewableSubscription</span><span class="p">(</span><span class="n">forDate</span> <span class="nv">date</span><span class="p">:</span> <span class="kt">Date</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>date</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The date in which the auto-renewable subscription should be active.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>true if the latest auto-renewable subscription is active for the given date, false otherwise.</p>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppPurchase.swift#L85-L100">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:Se4fromxs7Decoder_p_tKcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(from:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:Se4fromxs7Decoder_p_tKcfc">init(from:<wbr>)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="n">from</span> <span class="nv">decoder</span><span class="p">:</span> <span class="kt">Decoder</span><span class="p">)</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppReceipt+ASN1Decodable.swift#L178-L242">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt02InB8PurchaseV8template9ASN1Swift0G8TemplateCvpZ"></a>
+                    <a name="//apple_ref/swift/Variable/template" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt02InB8PurchaseV8template9ASN1Swift0G8TemplateCvpZ">template</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">var</span> <span class="nv">template</span><span class="p">:</span> <span class="kt">ASN1Template</span> <span class="p">{</span> <span class="k">get</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/InAppReceipt+ASN1Decodable.swift#L244-L247">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/tikhop/TPInAppReceipt" target="_blank" rel="external">Pavel Tikhonenko</a>. All rights reserved. (Last updated: 2021-05-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

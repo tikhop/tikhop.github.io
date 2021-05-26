@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>SignatureValidationFailureReason Enumeration Reference</title>
+    <link rel="stylesheet" type="text/css" href="../../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../../js/jquery.min.js" defer></script>
+    <script src="../../js/jazzy.js" defer></script>
+    
+    <script src="../../js/lunr.min.js" defer></script>
+    <script src="../../js/typeahead.jquery.js" defer></script>
+    <script src="../../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Enum/SignatureValidationFailureReason" class="dashAnchor"></a>
+    <a title="SignatureValidationFailureReason Enumeration Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../../index.html">TPInAppReceipt 3.2.0 Docs</a> (53% documented)</p>
+        <p class="header-right"><a href="https://github.com/tikhop/TPInAppReceipt"><img src="../../img/gh.png"/>View on GitHub</a></p>
+        <p class="header-right">
+          <form role="search" action="../../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../../index.html">TPInAppReceipt Reference</a>
+        <img id="carat" src="../../img/carat.png" />
+        SignatureValidationFailureReason Enumeration Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Classes/InAppReceipt.html">InAppReceipt</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Classes.html#/s:14TPInAppReceipt19SKSubscriptionGroupC">SKSubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Enums/IARError.html">IARError</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/IARError/ReceiptInitializationFailureReason.html">– ReceiptInitializationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/IARError/ValidationFailureReason.html">– ValidationFailureReason</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Enums/IARError/SignatureValidationFailureReason.html">– SignatureValidationFailureReason</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Extensions/Bundle.html">Bundle</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/SKProductsResponse.html">SKProductsResponse</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Extensions/String.html">String</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Structs/InAppPurchase.html">InAppPurchase</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs/InAppPurchase/Type.html">– Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Structs.html#/s:14TPInAppReceipt02InbC5FieldV">InAppReceiptField</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../../Typealiases.html">Type Aliases</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:14TPInAppReceipt15GroupIdentifiera">GroupIdentifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:14TPInAppReceipt23IAPRefreshRequestResulta">IAPRefreshRequestResult</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../../Typealiases.html#/s:14TPInAppReceipt17SubscriptionGroupa">SubscriptionGroup</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>SignatureValidationFailureReason</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">SignatureValidationFailureReason</span></code></pre>
+
+                </div>
+              </div>
+            <p>The underlying reason the signature validation error occurred.</p>
+
+<ul>
+<li>appleIncRootCertificateNotFound:          Apple Inc Root Certificate Not Found</li>
+<li>unableToLoadAppleIncRootCertificate:      Unable To Load Apple Inc Root Certificate</li>
+<li>receiptIsNotSigned:                       The receipt doesn&rsquo;t contain a signature</li>
+<li>receiptSignedDataNotFound:                The receipt does contain somr signature, but there is an error while creating a signature object</li>
+<li>invalidSignature:                         The receipt contains invalid signature</li>
+</ul>
+
+              <div class="slightly-smaller">
+                <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L52-L67">Show on GitHub</a>
+              </div>
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO31appleIncRootCertificateNotFoundyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/appleIncRootCertificateNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO31appleIncRootCertificateNotFoundyA2EmF">appleIncRootCertificateNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">appleIncRootCertificateNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO35unableToLoadAppleIncRootCertificateyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadAppleIncRootCertificate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO35unableToLoadAppleIncRootCertificateyA2EmF">unableToLoadAppleIncRootCertificate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadAppleIncRootCertificate</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO29unableToLoadAppleIncPublicKeyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadAppleIncPublicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO29unableToLoadAppleIncPublicKeyyA2EmF">unableToLoadAppleIncPublicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadAppleIncPublicKey</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO29unableToLoadiTunesCertificateyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadiTunesCertificate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO29unableToLoadiTunesCertificateyA2EmF">unableToLoadiTunesCertificate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadiTunesCertificate</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO27unableToLoadiTunesPublicKeyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadiTunesPublicKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO27unableToLoadiTunesPublicKeyyA2EmF">unableToLoadiTunesPublicKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadiTunesPublicKey</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO41unableToLoadWorldwideDeveloperCertificateyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadWorldwideDeveloperCertificate" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO41unableToLoadWorldwideDeveloperCertificateyA2EmF">unableToLoadWorldwideDeveloperCertificate</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadWorldwideDeveloperCertificate</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO32unableToLoadAppleIncPublicSecKeyyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/unableToLoadAppleIncPublicSecKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO32unableToLoadAppleIncPublicSecKeyyA2EmF">unableToLoadAppleIncPublicSecKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">unableToLoadAppleIncPublicSecKey</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO18receiptIsNotSignedyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/receiptIsNotSigned" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO18receiptIsNotSignedyA2EmF">receiptIsNotSigned</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">receiptIsNotSigned</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO25receiptSignedDataNotFoundyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/receiptSignedDataNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO25receiptSignedDataNotFoundyA2EmF">receiptSignedDataNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">receiptSignedDataNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO19receiptDataNotFoundyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/receiptDataNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO19receiptDataNotFoundyA2EmF">receiptDataNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">receiptDataNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO17signatureNotFoundyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/signatureNotFound" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO17signatureNotFoundyA2EmF">signatureNotFound</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">signatureNotFound</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO07invalidE0yA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidSignature" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO07invalidE0yA2EmF">invalidSignature</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidSignature</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO30invalidCertificateChainOfTrustyA2EmF"></a>
+                    <a name="//apple_ref/swift/Element/invalidCertificateChainOfTrust" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14TPInAppReceipt8IARErrorO32SignatureValidationFailureReasonO30invalidCertificateChainOfTrustyA2EmF">invalidCertificateChainOfTrust</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">invalidCertificateChainOfTrust</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div class="slightly-smaller">
+                        <a href="https://github.com/tikhop/TPInAppReceipt/tree/3.2.0/Sources/IARError.swift#L">Show on GitHub</a>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2021 <a class="link" href="https://github.com/tikhop/TPInAppReceipt" target="_blank" rel="external">Pavel Tikhonenko</a>. All rights reserved. (Last updated: 2021-05-26)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.7</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
