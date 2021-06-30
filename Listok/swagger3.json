@@ -33,10 +33,6 @@
         {
             "post":
             {
-                "tags":
-                [
-                    "user"
-                ],
                 "summary": "Register user into the system",
                 "description": "",
                 "operationId": "registerUser",
@@ -93,31 +89,124 @@
                     }
                 }
             }
+        },
+        "/auth/login":
+        {
+            "post":
+            {
+                "summary": "Log in user into the system",
+                "description": "",
+                "operationId": "loginUser",
+                "requestBody":
+                {
+                    "content":
+                    {
+                        "application/json":
+                        {
+                            "schema":
+                            {
+                                "type": "object",
+                                "properties":
+                                {
+                                    "email":
+                                    {
+                                        "description": "Email",
+                                        "type": "string"
+                                    },
+                                    "password":
+                                    {
+                                        "description": "User password",
+                                        "type": "string"
+                                    }
+                                },
+                                "required":
+                                [
+                                    "email",
+                                    "password"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation",
+                        "content":
+                        {
+                            "application/json":
+                            {
+                                "schema":
+                                {
+                                    "$ref": "#/components/schemas/AuthResponse"
+                                }
+                            }
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "Invalid email/password supplied"
+                    }
+                }
+            }
+        },
+        "/auth/token/refresh":
+        {
+            "post":
+            {
+                "summary": "Log in user into the system",
+                "description": "",
+                "operationId": "tokenRefresh",
+                "requestBody":
+                {
+                    "content":
+                    {
+                        "application/json":
+                        {
+                            "schema":
+                            {
+                                "type": "object",
+                                "properties":
+                                {
+                                    "refreshToken":
+                                    {
+                                        "description": "Refresh token",
+                                        "type": "string"
+                                    }
+                                },
+                                "required":
+                                [
+                                    "refreshToken"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation",
+                        "content":
+                        {
+                            "application/json":
+                            {
+                                "schema":
+                                {
+                                    "$ref": "#/components/schemas/AuthorizationCredential"
+                                }
+                            }
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "Invalid refresh token supplied"
+                    }
+                }
+            }
         }
     },
-    "tags":
-    [
-        {
-            "name": "Tag",
-            "description": "Tags"
-        },
-        {
-            "name": "AuthResponse",
-            "description": "Auth"
-        },
-        {
-            "name": "User",
-            "description": "Operations about user"
-        },
-        {
-            "name": "Profile",
-            "description": "Operations about user profile"
-        },
-        {
-            "name": "Image",
-            "description": "Operations about image"
-        }
-    ],
     "components":
     {
         "schemas":
@@ -212,6 +301,25 @@
                     "original":
                     {
                         "type": "string"
+                    }
+                }
+            },
+            "AuthorizationCredential":
+            {
+            	"type": "object",
+                "properties":
+                {
+                    "accountId":
+                    {
+                        "type": "uuid"
+                    },
+                    "accessToken":
+                    {
+                        "type": "String"
+                    },
+                    "refreshToken":
+                    {
+                        "type": "String"
                     }
                 }
             },
