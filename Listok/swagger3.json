@@ -1420,8 +1420,19 @@
             "type" : "integer",
             "format" : "int64"
           },
-          "name" : {
+          "title" : {
             "type" : "string"
+          },
+          "color" : {
+            "type" : "string"
+          },
+          "weight" : {
+            "type" : "integer",
+            "description" : "Most used tags have a higher rank (weight)"
+          },
+          "updatedAt" : {
+            "type" : "string",
+            "format" : "date"
           }
         },
         "xml" : {
