@@ -155,7 +155,7 @@
         {
             "post":
             {
-                "summary": "Log in user into the system",
+                "summary": "Refresh jwt token",
                 "description": "",
                 "operationId": "tokenRefresh",
                 "requestBody":
@@ -208,7 +208,7 @@
         },
         "productivity/tasks":
         {
-        	"get":
+            "get":
             {
                 "summary": "Get all user tasks",
                 "description": "",
@@ -224,10 +224,10 @@
                             {
                                 "schema":
                                 {
-                                	"type": "array",
-                                	"items":
-                                	{
-                                    	"$ref": "#/components/schemas/AuthorizationCredential"
+                                    "type": "array",
+                                    "items":
+                                    {
+                                        "$ref": "#/components/schemas/Task"
                                     }
                                 }
                             }
@@ -239,14 +239,131 @@
                     }
                 }
             }
+        },
+        "productivity/task/{id}":
+        {
+            "get":
+            {
+                "summary": "Get task by id",
+                "description": "",
+                "operationId": "getAllTasks",
+                "parameters":
+                [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of task",
+                        "required": true,
+                        "schema":
+                        {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation",
+                        "content":
+                        {
+                            "application/json":
+                            {
+                                "schema":
+                                {
+                                    "$ref": "#/components/schemas/Task"
+                                }
+                            }
+                        }
+                    },
+                    "404":
+                    {
+                        "description": "Task not found"
+                    },
+                    "400":
+                    {
+                        "description": "Invalid refresh token supplied"
+                    }
+                }
+            },
+            "put":
+            {
+                "summary": "Update task by id",
+                "description": "",
+                "operationId": "deleteTask",
+                "parameters":
+                [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of task",
+                        "required": true,
+                        "schema":
+                        {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation"
+                    },
+                    "404":
+                    {
+                        "description": "Task not found"
+                    },
+                    "400":
+                    {
+                        "description": "Invalid refresh token supplied"
+                    }
+                }
+            },
+            "delete":
+            {
+                "summary": "Delete task by id",
+                "description": "",
+                "operationId": "deleteTask",
+                "parameters":
+                [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of task",
+                        "required": true,
+                        "schema":
+                        {
+                            "type": "string",
+                            "format": "uuid"
+                        }
+                    }
+                ],
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation"
+                    },
+                    "404":
+                    {
+                        "description": "Task not found"
+                    },
+                    "400":
+                    {
+                        "description": "Invalid refresh token supplied"
+                    }
+                }
+            }
         }
-
     },
     "components":
     {
         "schemas":
         {
-        	"Task":
+            "Task":
             {
                 "type": "object",
                 "properties":
@@ -268,8 +385,8 @@
                     {
                         "type": "array",
                         "items":
-                    	{
-                        	"$ref": "#/components/schemas/Tag"
+                        {
+                            "$ref": "#/components/schemas/Tag"
                         }
                     },
                     "deadline":
@@ -305,11 +422,11 @@
                     {
                         "type": "array",
                         "items":
-                    	{
-                        	"$ref": "#/components/schemas/User"
+                        {
+                            "$ref": "#/components/schemas/User"
                         }
                     },
-					"doneAt":
+                    "doneAt":
                     {
                         "type": "string",
                         "format": "date"
@@ -323,7 +440,7 @@
                     {
                         "type": "string",
                         "format": "date"
-                    },
+                    }
                 }
             },
             "Tag":
@@ -421,7 +538,7 @@
             },
             "AuthorizationCredential":
             {
-            	"type": "object",
+                "type": "object",
                 "properties":
                 {
                     "accountId":
@@ -464,16 +581,14 @@
             }
         },
         "requestBodies":
-        {
-            
-        },
+        {},
         "securitySchemes":
         {
-        	"bearerAuth":
-        	{
-            	"type": "http",
-            	"scheme": "bearer",
-            	"bearerFormat": "JWT"
+            "bearerAuth":
+            {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT"
             }
         }
     }
