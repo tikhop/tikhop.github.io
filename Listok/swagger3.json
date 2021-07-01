@@ -1,1390 +1,1629 @@
 {
-  "openapi": "3.0.1",
-  "info": {
-    "title": "Listok API",
-    "description": "Listok API",
-    "termsOfService": "https://listok.app/terms/",
-    "contact": {
-      "email": "hi@listok.dev"
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "Listok API",
+    "description" : "Listok API",
+    "termsOfService" : "https://listok.app/terms/",
+    "contact" : {
+      "email" : "hi@listok.dev"
     },
-    "version": "1.0.0"
+    "version" : "1.0.0"
   },
-  "externalDocs": {
-    "description": "Find out more about Listok",
-    "url": "https://listok.app"
+  "externalDocs" : {
+    "description" : "Find out more about Listok",
+    "url" : "https://listok.app"
   },
-  "servers": [
-    {
-      "url": "https://api.listok.dev/1.0/"
-    }
-  ],
-  "tags": [
-    {
-      "name": "Auth"
-    },
-    {
-      "name": "Productivity"
-    },
-    {
-      "name": "TaskAndMessages"
-    }
-  ],
-  "paths": {
-    "/auth/register": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "summary": "Register user into the system",
-        "operationId": "registerUser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body"
+  "servers" : [ {
+    "url" : "https://api.listok.dev/1.0/"
+  } ],
+  "paths" : {
+    "/auth/register" : {
+      "post" : {
+        "summary" : "Register user into the system",
+        "description" : "",
+        "operationId" : "registerUser",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "email" : {
+                    "description" : "Email",
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "description" : "User password",
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "email", "password" ]
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthResponse"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AuthResponse"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid email/password supplied"
+          "400" : {
+            "description" : "Invalid email/password supplied"
           }
-        }
+        },
+        "tags" : [ "Auth" ]
       }
     },
-    "/auth/login": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "summary": "Log in user into the system",
-        "operationId": "loginUser",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_1"
+    "/auth/login" : {
+      "post" : {
+        "summary" : "Log in user into the system",
+        "description" : "",
+        "operationId" : "loginUser",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "email" : {
+                    "description" : "Email",
+                    "type" : "string"
+                  },
+                  "password" : {
+                    "description" : "User password",
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "email", "password" ]
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthResponse"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AuthResponse"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid email/password supplied"
+          "400" : {
+            "description" : "Invalid email/password supplied"
           }
-        }
+        },
+        "tags" : [ "Auth" ]
       }
     },
-    "/auth/token/refresh": {
-      "post": {
-        "tags": [
-          "Auth"
-        ],
-        "summary": "Refresh jwt token",
-        "operationId": "tokenRefresh",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_2"
+    "/auth/token/refresh" : {
+      "post" : {
+        "summary" : "Refresh jwt token",
+        "description" : "",
+        "operationId" : "tokenRefresh",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "refreshToken" : {
+                    "description" : "Refresh token",
+                    "type" : "string"
+                  }
+                },
+                "required" : [ "refreshToken" ]
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/AuthorizationCredential"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AuthorizationCredential"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          }
-        }
-      }
-    },
-    "/productivity/task": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Create a task",
-        "operationId": "createTask",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CreateTask"
-              }
-            }
+          "400" : {
+            "description" : "Invalid refresh token supplied"
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Task"
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Something wrong"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "tags" : [ "Auth" ]
       }
     },
-    "/productivity/tasks": {
-      "get": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Get all user tasks",
-        "operationId": "getAllTasks",
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Task"
+    "/user/search" : {
+      "get" : {
+        "summary" : "Search user by name/username",
+        "operationId" : "searchUsers",
+        "parameters" : [ {
+          "name" : "query",
+          "in" : "query",
+          "description" : "Search query",
+          "required" : true,
+          "schema" : {
+            "type" : "string"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/User"
                   }
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Users" ]
       }
     },
-    "/productivity/tasks/sync": {
-      "get": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Sync users tasks",
-        "operationId": "syncTasks",
-        "parameters": [
-          {
-            "name": "timestamp",
-            "in": "query",
-            "description": "Timestamp of the last sync",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "string",
-              "format": "date"
-            }
+    "/user/{id}" : {
+      "get" : {
+        "summary" : "Retrieve user by id",
+        "operationId" : "userById",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of user",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/SyncResponse"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Users" ]
       }
     },
-    "/productivity/task/{id}": {
-      "get": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Get task by id",
-        "operationId": "getTask",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
+    "/user/{id}/add" : {
+      "post" : {
+        "summary" : "Add user to friend list",
+        "operationId" : "addFriend",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of user",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Task"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Something wrong"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Users" ]
+      }
+    },
+    "/user/me" : {
+      "get" : {
+        "summary" : "Retrieve current user",
+        "operationId" : "me",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/User"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      },
-      "put": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Update task by id",
-        "operationId": "updateTask",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Delete task by id",
-        "operationId": "deleteTask",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
       }
     },
-    "/productivity/task/{id}/join": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Join task",
-        "operationId": "joinTask",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/markAsDone": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Toggle task's status (done)",
-        "operationId": "toggleTaskStatus",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Done or not",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/focus": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Toggle task's focus",
-        "operationId": "toggleTaskFocus",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Focused or not",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/mute": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Toggle task's focus",
-        "operationId": "toggleTaskMute",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Done or not",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Muted not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/archive": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Toggle task's focus",
-        "operationId": "toggleTaskArchive",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "value",
-            "in": "query",
-            "description": "Archived or not",
-            "required": true,
-            "style": "form",
-            "explode": true,
-            "schema": {
-              "type": "boolean"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/assignees": {
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Add assignees to the task",
-        "operationId": "addAssignees",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_3"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Remove assignees from the task",
-        "operationId": "removeAssignees",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_4"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/participants": {
-      "get": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Get all participants for the task",
-        "operationId": "getParticipants",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/inline_response_200"
+    "/user/me/preferences" : {
+      "get" : {
+        "summary" : "Get user's preferences",
+        "operationId" : "mePreferences",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/AccountPreferences"
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
       },
-      "post": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Add participants to the task",
-        "operationId": "addParticipants",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_5"
+      "put" : {
+        "summary" : "Update user's preferences",
+        "operationId" : "updatePreferences",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/AccountPreferences"
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      },
-      "delete": {
-        "tags": [
-          "Productivity"
-        ],
-        "summary": "Remove participants from the task",
-        "operationId": "removeParticipants",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_6"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
       }
     },
-    "/productivity/task/{id}/messages": {
-      "get": {
-        "tags": [
-          "TaskAndMessages"
-        ],
-        "summary": "Get all messages",
-        "operationId": "getAllMessages",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
+    "/user/me/profile" : {
+      "put" : {
+        "summary" : "Update user's profile",
+        "operationId" : "updateProfile",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "firstName" : {
+                    "type" : "string"
+                  },
+                  "lastName" : {
+                    "type" : "string"
+                  },
+                  "username" : {
+                    "type" : "string"
+                  }
+                }
+              }
             }
           }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "$ref": "#/components/schemas/Message"
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Something wrong"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
+      }
+    },
+    "/user/me/profile/avatar" : {
+      "patch" : {
+        "summary" : "Update user's avatar",
+        "description" : "First you need to upload an image on uploadcare and then provide an image uuid",
+        "operationId" : "updateUserAvatar",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "image" : {
+                    "type" : "string",
+                    "format" : "uuid"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Something wrong"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
+      }
+    },
+    "/user/me/friends" : {
+      "get" : {
+        "summary" : "Retrieve all user friends",
+        "operationId" : "userFriends",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/User"
                   }
                 }
               }
             }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Current User" ]
       }
     },
-    "/productivity/task/{id}/messages/readAll": {
-      "post": {
-        "tags": [
-          "TaskAndMessages"
-        ],
-        "summary": "Read all messages at once",
-        "operationId": "readAllMessages",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/productivity/task/{id}/messages/{messageId}": {
-      "post": {
-        "tags": [
-          "TaskAndMessages"
-        ],
-        "summary": "Delete message",
-        "operationId": "deleteMessages",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "description": "ID of task",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          },
-          {
-            "name": "messageId",
-            "in": "path",
-            "description": "ID of message",
-            "required": true,
-            "style": "simple",
-            "explode": false,
-            "schema": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "successful operation"
-          },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
-          }
-        },
-        "security": [
-          {
-            "bearerAuth": []
-          }
-        ]
-      }
-    },
-    "/messaging/send": {
-      "post": {
-        "tags": [
-          "TaskAndMessages"
-        ],
-        "summary": "Read all messages at once",
-        "operationId": "sendMessage",
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/body_7"
+    "/productivity/task" : {
+      "post" : {
+        "summary" : "Create a task",
+        "operationId" : "createTask",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/CreateTask"
               }
             }
           }
         },
-        "responses": {
-          "200": {
-            "description": "successful operation"
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Task"
+                }
+              }
+            }
           },
-          "400": {
-            "description": "Invalid refresh token supplied"
-          },
-          "404": {
-            "description": "Task not found"
+          "400" : {
+            "description" : "Something wrong"
           }
         },
-        "security": [
-          {
-            "bearerAuth": []
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/tasks" : {
+      "get" : {
+        "summary" : "Get all user tasks",
+        "description" : "",
+        "operationId" : "getAllTasks",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Task"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
           }
-        ]
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/tasks/sync" : {
+      "get" : {
+        "summary" : "Sync users tasks",
+        "operationId" : "syncTasks",
+        "parameters" : [ {
+          "name" : "timestamp",
+          "in" : "query",
+          "description" : "Timestamp of the last sync",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/SyncResponse"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}" : {
+      "get" : {
+        "summary" : "Get task by id",
+        "description" : "",
+        "operationId" : "getTask",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Task"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      },
+      "put" : {
+        "summary" : "Update task by id",
+        "description" : "",
+        "operationId" : "updateTask",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      },
+      "delete" : {
+        "summary" : "Delete task by id",
+        "description" : "",
+        "operationId" : "deleteTask",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/join" : {
+      "post" : {
+        "summary" : "Join task",
+        "description" : "",
+        "operationId" : "joinTask",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/markAsDone" : {
+      "post" : {
+        "summary" : "Toggle task's status (done)",
+        "description" : "",
+        "operationId" : "toggleTaskStatus",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "description" : "Done or not",
+          "required" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/focus" : {
+      "post" : {
+        "summary" : "Toggle task's focus",
+        "description" : "",
+        "operationId" : "toggleTaskFocus",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "description" : "Focused or not",
+          "required" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/mute" : {
+      "post" : {
+        "summary" : "Mute/unmute task",
+        "description" : "",
+        "operationId" : "toggleTaskMute",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "description" : "Done or not",
+          "required" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Muted not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/archive" : {
+      "post" : {
+        "summary" : "Archive/Unarchve task",
+        "description" : "",
+        "operationId" : "toggleTaskArchive",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }, {
+          "name" : "value",
+          "in" : "query",
+          "description" : "Archived or not",
+          "required" : true,
+          "schema" : {
+            "type" : "boolean"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/assignees" : {
+      "post" : {
+        "summary" : "Add assignees to the task",
+        "description" : "",
+        "operationId" : "addAssignees",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "assignees" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "format" : "uuid"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      },
+      "delete" : {
+        "summary" : "Remove assignees from the task",
+        "description" : "",
+        "operationId" : "removeAssignees",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "assignees" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "format" : "uuid"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/participants" : {
+      "get" : {
+        "summary" : "Get all participants for the task",
+        "description" : "",
+        "operationId" : "getParticipants",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "participants" : {
+                      "type" : "array",
+                      "items" : {
+                        "$ref" : "#/components/schemas/User"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      },
+      "post" : {
+        "summary" : "Add participants to the task",
+        "description" : "",
+        "operationId" : "addParticipants",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "participants" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "format" : "uuid"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      },
+      "delete" : {
+        "summary" : "Remove participants from the task",
+        "description" : "",
+        "operationId" : "removeParticipants",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "participants" : {
+                    "type" : "array",
+                    "items" : {
+                      "type" : "string",
+                      "format" : "uuid"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
+      }
+    },
+    "/productivity/task/{id}/messages" : {
+      "get" : {
+        "summary" : "Get all messages",
+        "description" : "",
+        "operationId" : "getAllMessages",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Message"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Task And Messages" ]
+      }
+    },
+    "/productivity/task/{id}/messages/readAll" : {
+      "post" : {
+        "summary" : "Read all messages at once",
+        "description" : "",
+        "operationId" : "readAllMessages",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Task And Messages" ]
+      }
+    },
+    "/productivity/task/{id}/messages/{messageId}" : {
+      "post" : {
+        "summary" : "Delete message",
+        "description" : "",
+        "operationId" : "deleteMessages",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of task",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        }, {
+          "name" : "messageId",
+          "in" : "path",
+          "description" : "ID of message",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Task And Messages" ]
+      }
+    },
+    "/messaging/send" : {
+      "post" : {
+        "summary" : "Read all messages at once",
+        "description" : "",
+        "operationId" : "sendMessage",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "properties" : {
+                  "text" : {
+                    "type" : "string"
+                  },
+                  "backlogItemId" : {
+                    "type" : "string",
+                    "format" : "uuid",
+                    "description" : "taks id"
+                  },
+                  "attachment" : {
+                    "type" : "string",
+                    "format" : "uuid"
+                  }
+                },
+                "required" : [ "backlogItemId" ]
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Task And Messages" ]
+      }
+    },
+    "/user/tags" : {
+      "get" : {
+        "summary" : "Get all tags of current users",
+        "description" : "",
+        "operationId" : "getAllTags",
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "array",
+                  "items" : {
+                    "$ref" : "#/components/schemas/Tag"
+                  }
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Tags" ]
+      }
+    },
+    "/user/tag" : {
+      "post" : {
+        "summary" : "Create a tag",
+        "description" : "",
+        "operationId" : "createTag",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Tag"
+              }
+            }
+          }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Tag"
+                }
+              }
+            }
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Tags" ]
+      }
+    },
+    "/user/tag/{id}" : {
+      "put" : {
+        "summary" : "Update tag",
+        "operationId" : "updateTag",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/Tag"
+              }
+            }
+          }
+        },
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of tag",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/Tag"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "Something wrong"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Tags" ]
+      },
+      "delete" : {
+        "summary" : "Delete tag by id",
+        "description" : "",
+        "operationId" : "deleteTag",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "description" : "ID of tag",
+          "required" : true,
+          "schema" : {
+            "type" : "string",
+            "format" : "uuid"
+          }
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "successful operation"
+          },
+          "400" : {
+            "description" : "Invalid refresh token supplied"
+          },
+          "404" : {
+            "description" : "Task not found"
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ],
+        "tags" : [ "Productivity" ]
       }
     }
   },
-  "components": {
-    "schemas": {
-      "Task": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
+  "components" : {
+    "schemas" : {
+      "Task" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
           },
-          "author": {
-            "$ref": "#/components/schemas/User"
+          "author" : {
+            "$ref" : "#/components/schemas/User"
           },
-          "title": {
-            "type": "string"
+          "title" : {
+            "type" : "string"
           },
-          "tags": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Tag"
+          "tags" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Tag"
             }
           },
-          "deadline": {
-            "type": "string",
-            "format": "date"
+          "deadline" : {
+            "type" : "string",
+            "format" : "date"
           },
-          "isDone": {
-            "type": "boolean"
+          "isDone" : {
+            "type" : "boolean"
           },
-          "isArchived": {
-            "type": "boolean"
+          "isArchived" : {
+            "type" : "boolean"
           },
-          "isFocused": {
-            "type": "boolean"
+          "isFocused" : {
+            "type" : "boolean"
           },
-          "isParticipating": {
-            "type": "boolean"
+          "isParticipating" : {
+            "type" : "boolean"
           },
-          "isMuted": {
-            "type": "boolean"
+          "isMuted" : {
+            "type" : "boolean"
           },
-          "unreadMessageCount": {
-            "type": "integer"
+          "unreadMessageCount" : {
+            "type" : "integer"
           },
-          "assignees": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User"
+          "assignees" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/User"
             }
           },
-          "doneAt": {
-            "type": "string",
-            "format": "date"
+          "doneAt" : {
+            "type" : "string",
+            "format" : "date"
           },
-          "updatedAt": {
-            "type": "string",
-            "format": "date"
+          "updatedAt" : {
+            "type" : "string",
+            "format" : "date"
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date"
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
           }
         }
       },
-      "Tag": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
+      "Tag" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
           },
-          "name": {
-            "type": "string"
+          "name" : {
+            "type" : "string"
           }
         },
-        "xml": {
-          "name": "Tag"
+        "xml" : {
+          "name" : "Tag"
         }
       },
-      "AuthResponse": {
-        "type": "object",
-        "properties": {
-          "accessToken": {
-            "type": "string"
+      "AuthResponse" : {
+        "type" : "object",
+        "properties" : {
+          "accessToken" : {
+            "type" : "string"
           },
-          "refreshToken": {
-            "type": "string"
+          "refreshToken" : {
+            "type" : "string"
           },
-          "user": {
-            "$ref": "#/components/schemas/User"
+          "user" : {
+            "$ref" : "#/components/schemas/User"
           }
         }
       },
-      "User": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int64"
+      "User" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "integer",
+            "format" : "int64"
           },
-          "profile": {
-            "$ref": "#/components/schemas/Profile"
-          }
-        },
-        "xml": {
-          "name": "User"
-        }
-      },
-      "Profile": {
-        "type": "object",
-        "properties": {
-          "username": {
-            "type": "string"
-          },
-          "firstName": {
-            "type": "string"
-          },
-          "avatar": {
-            "$ref": "#/components/schemas/Image"
-          }
-        }
-      },
-      "Image": {
-        "type": "object",
-        "properties": {
-          "thumb": {
-            "type": "string"
-          },
-          "original": {
-            "type": "string"
-          }
-        }
-      },
-      "AuthorizationCredential": {
-        "type": "object",
-        "properties": {
-          "accountId": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "accessToken": {
-            "type": "string"
-          },
-          "refreshToken": {
-            "type": "string"
-          }
-        }
-      },
-      "ApiResponse": {
-        "type": "object",
-        "properties": {
-          "code": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "type": {
-            "type": "string"
-          },
-          "message": {
-            "type": "string"
+          "profile" : {
+            "$ref" : "#/components/schemas/Profile"
           }
         },
-        "xml": {
-          "name": "##default"
+        "xml" : {
+          "name" : "User"
         }
       },
-      "CreateTask": {
-        "required": [
-          "title"
-        ],
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string"
+      "Profile" : {
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string"
           },
-          "deadline": {
-            "type": "string",
-            "format": "date"
+          "firstName" : {
+            "type" : "string"
           },
-          "tags": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Tag"
+          "avatar" : {
+            "$ref" : "#/components/schemas/Image"
+          }
+        }
+      },
+      "Image" : {
+        "type" : "object",
+        "properties" : {
+          "thumb" : {
+            "type" : "string"
+          },
+          "original" : {
+            "type" : "string"
+          }
+        }
+      },
+      "AuthorizationCredential" : {
+        "type" : "object",
+        "properties" : {
+          "accountId" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "accessToken" : {
+            "type" : "string"
+          },
+          "refreshToken" : {
+            "type" : "string"
+          }
+        }
+      },
+      "ApiResponse" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "type" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          }
+        },
+        "xml" : {
+          "name" : "##default"
+        }
+      },
+      "CreateTask" : {
+        "type" : "object",
+        "properties" : {
+          "title" : {
+            "type" : "string"
+          },
+          "deadline" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "tags" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Tag"
             }
           },
-          "assigneeIds": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
+          "assigneeIds" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "uuid"
             }
           }
-        }
+        },
+        "required" : [ "title" ]
       },
-      "SyncResponse": {
-        "type": "object",
-        "properties": {
-          "created": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
+      "SyncResponse" : {
+        "type" : "object",
+        "properties" : {
+          "created" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Task"
             }
           },
-          "updated": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Task"
+          "updated" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/components/schemas/Task"
             }
           },
-          "deleted": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        }
-      },
-      "Message": {
-        "required": [
-          "createdAt",
-          "id",
-          "sender"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "sender": {
-            "$ref": "#/components/schemas/User"
-          },
-          "text": {
-            "type": "string"
-          },
-          "attachment": {
-            "type": "string",
-            "format": "uuid"
-          },
-          "createdAt": {
-            "type": "string",
-            "format": "date"
-          }
-        }
-      },
-      "body": {
-        "required": [
-          "email",
-          "password"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "Email"
-          },
-          "password": {
-            "type": "string",
-            "description": "User password"
-          }
-        }
-      },
-      "body_1": {
-        "required": [
-          "email",
-          "password"
-        ],
-        "type": "object",
-        "properties": {
-          "email": {
-            "type": "string",
-            "description": "Email"
-          },
-          "password": {
-            "type": "string",
-            "description": "User password"
-          }
-        }
-      },
-      "body_2": {
-        "required": [
-          "refreshToken"
-        ],
-        "type": "object",
-        "properties": {
-          "refreshToken": {
-            "type": "string",
-            "description": "Refresh token"
-          }
-        }
-      },
-      "body_3": {
-        "type": "object",
-        "properties": {
-          "assignees": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
+          "deleted" : {
+            "type" : "array",
+            "items" : {
+              "type" : "string",
+              "format" : "uuid"
             }
           }
         }
       },
-      "body_4": {
-        "type": "object",
-        "properties": {
-          "assignees": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        }
-      },
-      "inline_response_200": {
-        "type": "object",
-        "properties": {
-          "participants": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User"
-            }
-          }
-        }
-      },
-      "body_5": {
-        "type": "object",
-        "properties": {
-          "participants": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        }
-      },
-      "body_6": {
-        "type": "object",
-        "properties": {
-          "participants": {
-            "type": "array",
-            "items": {
-              "type": "string",
-              "format": "uuid"
-            }
-          }
-        }
-      },
-      "body_7": {
-        "required": [
-          "backlogItemId"
-        ],
-        "type": "object",
-        "properties": {
-          "text": {
-            "type": "string"
+      "Message" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "uuid"
           },
-          "backlogItemId": {
-            "type": "string",
-            "description": "taks id",
-            "format": "uuid"
+          "sender" : {
+            "$ref" : "#/components/schemas/User"
           },
-          "attachment": {
-            "type": "string",
-            "format": "uuid"
+          "text" : {
+            "type" : "string"
+          },
+          "attachment" : {
+            "type" : "string",
+            "format" : "uuid"
+          },
+          "createdAt" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        },
+        "required" : [ "id", "sender", "createdAt" ]
+      },
+      "AccountPreferences" : {
+        "type" : "object",
+        "properties" : {
+          "needToMoveToArchiveWhenTaskCompleted" : {
+            "type" : "boolean"
+          },
+          "needToMoveToArchiveWhenTaskCompletedAtEOD" : {
+            "type" : "boolean"
+          },
+          "keepNewTaskScreenOpen" : {
+            "type" : "boolean"
           }
         }
       }
     },
-    "requestBodies": {},
-    "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer",
-        "bearerFormat": "JWT"
+    "requestBodies" : { },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
       }
     }
-  }
+  },
+  "tags" : [ {
+    "name" : "Auth"
+  }, {
+    "name" : "Current User"
+  }, {
+    "name" : "Users"
+  }, {
+    "name" : "Productivity"
+  }, {
+    "name" : "Task and Messages"
+  }, {
+    "name" : "Tags"
+  } ]
 }
