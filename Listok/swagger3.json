@@ -205,12 +205,127 @@
                     }
                 }
             }
+        },
+        "productivity/tasks":
+        {
+        	"get":
+            {
+                "summary": "Get all user tasks",
+                "description": "",
+                "operationId": "getAllTasks",
+                "responses":
+                {
+                    "200":
+                    {
+                        "description": "successful operation",
+                        "content":
+                        {
+                            "application/json":
+                            {
+                                "schema":
+                                {
+                                	"type": "array",
+                                	"items":
+                                	{
+                                    	"$ref": "#/components/schemas/AuthorizationCredential"
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400":
+                    {
+                        "description": "Invalid refresh token supplied"
+                    }
+                }
+            }
         }
+
     },
     "components":
     {
         "schemas":
         {
+        	"Task":
+            {
+                "type": "object",
+                "properties":
+                {
+                    "id":
+                    {
+                        "type": "string",
+                        "format": "uuid"
+                    },
+                    "author":
+                    {
+                        "$ref": "#/components/schemas/User"
+                    },
+                    "title":
+                    {
+                        "type": "string"
+                    },
+                    "tags":
+                    {
+                        "type": "array",
+                        "items":
+                    	{
+                        	"$ref": "#/components/schemas/Tag"
+                        }
+                    },
+                    "deadline":
+                    {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "isDone":
+                    {
+                        "type": "boolean"
+                    },
+                    "isArchived":
+                    {
+                        "type": "boolean"
+                    },
+                    "isFocused":
+                    {
+                        "type": "boolean"
+                    },
+                    "isParticipating":
+                    {
+                        "type": "boolean"
+                    },
+                    "isMuted":
+                    {
+                        "type": "boolean"
+                    },
+                    "unreadMessageCount":
+                    {
+                        "type": "integer"
+                    },
+                    "assignees":
+                    {
+                        "type": "array",
+                        "items":
+                    	{
+                        	"$ref": "#/components/schemas/User"
+                        }
+                    },
+					"doneAt":
+                    {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "updatedAt":
+                    {
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "createdAt":
+                    {
+                        "type": "string",
+                        "format": "date"
+                    },
+                }
+            },
             "Tag":
             {
                 "type": "object",
